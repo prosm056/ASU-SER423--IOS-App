@@ -2,6 +2,8 @@
 
 ASU SER423 - Mobile Systems This application is the project work for course SER 423
 
+Dynamic Data Fetched from server using JSON RPC
+
 Some App Screenshots
 
 <img width="306" alt="Screen Shot 2021-03-26 at 5 22 07 PM" src="https://user-images.githubusercontent.com/75572930/112704497-11183f00-8e58-11eb-83b3-907fd9903da0.png">
