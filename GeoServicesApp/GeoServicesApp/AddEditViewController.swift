@@ -45,9 +45,12 @@ class AddEditViewController: UIViewController, UITextFieldDelegate {
     
     @objc func defaultData() {
         if placeDescription == nil {
+            // Adding new Place
+            self.title = "Enter New Place Details"
             return
         }
-
+        
+        self.title = "Edit Place Details"
         let parameters = [
             "jsonrpc": 2.0,
             "method": "get",
@@ -65,6 +68,7 @@ class AddEditViewController: UIViewController, UITextFieldDelegate {
     
     @objc func handleDone() {
         let pD = PlaceDescription()
+        pD.name = placeDescription?.name ?? "**Name**"
         pD.description = descriptionField.text ?? "Error"
         pD.category = categoryField.text ?? "Error"
         pD.addressTitle = addressTitleField.text ?? "Error"
@@ -125,6 +129,7 @@ class AddEditViewController: UIViewController, UITextFieldDelegate {
                     result = jsonData["result"] as! [String : AnyObject]
                     print(result)
                     DispatchQueue.main.async {
+                        
                         if self.placeDescription?.description == nil {
                             self.placeDescription?.description = result["description"] as? String
                         }
